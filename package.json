@@ -1,6 +1,6 @@
 {
   "name": "vue3-wp-components",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "main": "dist/vue3-wp-components.js",
   "module": "dist/vue3-wp-components.es.js",
   "types": "vue3-wp-components.d.ts",
@@ -20,7 +20,7 @@
     "dev": "vite --host",
     "build": "vite build",
     "serve": "vite preview",
-    "build:publish": "npm run build && npm publish",
+    "build:publish": "npm run build && npm publish && git add . && git commit -m 'all'&& git push origin dev",
     "theme": "sh src/css/element-ui/element-theme.sh"
   },
   "dependencies": {
