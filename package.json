@@ -21,7 +21,7 @@
     "build": "vite build",
     "serve": "vite preview",
     "build:publish": "npm run build && npm publish && git add . && git commit -m 'all'&& git push origin dev",
-    "push": "start.sh",
+    "build:push": "build.sh",
     "theme": "sh src/css/element-ui/element-theme.sh"
   },
   "dependencies": {
