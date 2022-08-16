@@ -1,0 +1,178 @@
+@use './variables'as *;
+@use './functions/utils'as funcs;
+
+:root {
+  --primary: #{$primary};
+  --primary--rgb: #{funcs.getColorRGB($primary)};
+  --primary-text-color: #fff;
+
+  --check-box-bg-active-color: #{$check-box-bg-active-color};
+  --check-box-active-color: #{$check-box-active-color};
+  --checkBoxBg: #{$check-box-bg-color};
+  --check-box-checked-color: #{$check-box-checked-color};
+  --check-box-checked-bg-color: #{$check-box-checked-bg-color};
+  --check-box-checked-border-color: #{$check-box-checked-border-color};
+  --check-box-checked-box-shadow-color: #{$check-box-checked-box-shadow-color};
+
+  --success: #{$success};
+  --warning: #{$warning};
+  --danger: #{$danger};
+  --info: #{$info};
+
+  --color-gray-50: #{$color-gray-50};
+  --color-gray-100: #{$color-gray-100};
+  --color-gray-200: #{$color-gray-200};
+  --color-gray-300: #{$color-gray-300};
+  --color-gray-400: #{$color-gray-400};
+  --color-gray-500: #{$color-gray-500};
+  --color-gray-600: #{$color-gray-600};
+  --color-gray-700: #{$color-gray-700};
+  --color-gray-800: #{$color-gray-800};
+  --color-gray-900: #{$color-gray-900};
+
+  --color-gray-50--rgb: #{funcs.getColorRGB($color-gray-50)};
+  --color-gray-100--rgb: #{funcs.getColorRGB($color-gray-100)};
+  --color-gray-200--rgb: #{funcs.getColorRGB($color-gray-200)};
+  --color-gray-300--rgb: #{funcs.getColorRGB($color-gray-300)};
+  --color-gray-400--rgb: #{funcs.getColorRGB($color-gray-400)};
+  --color-gray-500--rgb: #{funcs.getColorRGB($color-gray-500)};
+  --color-gray-600--rgb: #{funcs.getColorRGB($color-gray-600)};
+  --color-gray-700--rgb: #{funcs.getColorRGB($color-gray-700)};
+  --color-gray-800--rgb: #{funcs.getColorRGB($color-gray-800)};
+  --color-gray-900--rgb: #{funcs.getColorRGB($color-gray-900)};
+
+  // theme
+  @each $theme,
+  $color in $themes {
+    &[data-theme='#{$theme}'] {
+      --primary: #{$color};
+      --primary--rgb: #{funcs.getColorRGB($color)};
+
+      @if $theme=='vitality-yellow' {
+        --primary-text-color: #332600;
+
+        --color-primary-50: #fffdef;
+        --color-primary-100: #fffde0;
+        --color-primary-200: #fff5b2;
+        --color-primary-300: #ffea7f;
+        --color-primary-400: #ffdf5d;
+        --color-primary-500: #ffce3d;
+        --color-primary-600: #f9bf13;
+        --color-primary-700: #dba609;
+        --color-primary-800: #b08400;
+        --color-primary-900: #735a0f;
+
+        --sidebar-bg-from: #151b26;
+        --sidebar-bg-to: #151b26;
+      }
+
+      @if $theme=='cobalt-blue' {
+        --color-primary-50: #edf2ff;
+        --color-primary-100: #e1e9ff;
+        --color-primary-200: #b3c7ff;
+        --color-primary-300: #85a5ff;
+        --color-primary-400: #5784ff;
+        --color-primary-500: #2962ff;
+        --color-primary-600: #0041f5;
+        --color-primary-700: #0034c2;
+        --color-primary-800: #002da9;
+        --color-primary-900: #00268f;
+
+        --sidebar-bg-from: #2962ff;
+        --sidebar-bg-to: #2962ff;
+      }
+
+      @if $theme=='chalcedony-green' {
+        --color-primary-50: #ebf9ee;
+        --color-primary-100: #d5f2dd;
+        --color-primary-200: #abe5ba;
+        --color-primary-300: #80d797;
+        --color-primary-400: #55ca74;
+        --color-primary-500: #37b057;
+        --color-primary-600: #288140;
+        --color-primary-700: #237037;
+        --color-primary-800: #1e5c2d;
+        --color-primary-900: #164724;
+
+        --sidebar-bg-from: #25252b;
+        --sidebar-bg-to: #25252b;
+      }
+
+      @if $theme=='amber' {
+        --color-primary-50: #fffaf0;
+        --color-primary-100: #fff2e0;
+        --color-primary-200: #ffdaa8;
+        --color-primary-300: #ffc170;
+        --color-primary-400: #ffa938;
+        --color-primary-500: #ff9100;
+        --color-primary-600: #db7c00;
+        --color-primary-700: #b56600;
+        --color-primary-800: #915300;
+        --color-primary-900: #784500;
+
+        --sidebar-bg-from: #03234a;
+        --sidebar-bg-to: #03234a;
+      }
+
+      @if $theme=='indigo' {
+        --color-primary-50: #f0fbff;
+        --color-primary-100: #d1f1ff;
+        --color-primary-200: #99e0ff;
+        --color-primary-300: #61d0ff;
+        --color-primary-400: #29bfff;
+        --color-primary-500: #00a8f0;
+        --color-primary-600: #007db3;
+        --color-primary-700: #005980;
+        --color-primary-800: #00405c;
+        --color-primary-900: #003247;
+
+        --sidebar-bg-from: #10277c;
+        --sidebar-bg-to: #10277c;
+      }
+
+      @if $theme=='slate-blue' {
+        --color-primary-50: #f1f6fb;
+        --color-primary-100: #dbeaf4;
+        --color-primary-200: #b0d0e7;
+        --color-primary-300: #85b6da;
+        --color-primary-400: #5a9cce;
+        --color-primary-500: #3781b8;
+        --color-primary-600: #296089;
+        --color-primary-700: #1b3f5a;
+        --color-primary-800: #142e42;
+        --color-primary-900: #0d1e2b;
+
+        --sidebar-bg-from: #323e4d;
+        --sidebar-bg-to: #323e4d;
+      }
+
+      @if $theme=='purple' {
+        --color-primary-50: #F5F3FF;
+        --color-primary-100: #EDE9FE;
+        --color-primary-200: #DDD6FE;
+        --color-primary-300: #C4B5FD;
+        --color-primary-400: #A78BFA;
+        --color-primary-500: #8B5CF6;
+        --color-primary-600: #7C3AED;
+        --color-primary-700: #6D28D9;
+        --color-primary-800: #5B21B6;
+        --color-primary-900: #4C1D95;
+
+        --sidebar-bg-from: #330875;
+        --sidebar-bg-to: #220352;
+      }
+    }
+  }
+
+  --shadow-sm: #{$shadow-sm};
+  --shadow: #{$shadow};
+  --shadow-md: #{$shadow-md};
+  --shadow-lg: #{$shadow-lg};
+  --shadow-xl: #{$shadow-xl};
+  --shadow-2xl: #{$shadow-2xl};
+  --shadow-inner: #{$shadow-inner};
+}
+
+:root {
+  --nav-container-height: 0px;
+}

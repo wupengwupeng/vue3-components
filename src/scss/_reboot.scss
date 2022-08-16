@@ -1,0 +1,69 @@
+@use 'sass:math';
+
+html {
+  touch-action: manipulation; // https://developer.mozilla.org/zh-CN/docs/Web/CSS/touch-action 触摸动作也经常用于完全解决由支持双击缩放手势引起的点击事件的延迟
+}
+
+body {
+  min-width: 320px;
+  font-size: 14px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  color: $color-text-regular;
+  background-color: $background-color-base;
+  scroll-behavior: smooth; // https://developer.mozilla.org/zh-CN/docs/Web/CSS/scroll-behavior 平稳的滚动
+  // overscroll-behavior: contain; // https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior
+  -webkit-tap-highlight-color: transparent; // https://developer.mozilla.org/zh-CN/docs/Web/CSS/-webkit-tap-highlight-color 去除IOS点击高亮
+}
+
+// https://developer.mozilla.org/zh-CN/docs/Web/CSS/:any-link
+:any-link {
+  cursor: pointer;
+}
+
+// 覆盖Tailwind.css对button:focus的重置同时去除全局focus
+button:focus,
+:focus {
+  outline: none;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+img,
+svg {
+  display: inline-block;
+}
+
+// https://developer.mozilla.org/zh-CN/docs/Web/CSS/:focus-visible 这个选择器可以有效地根据用户的输入方式(鼠标 vs 键盘)展示不同形式的焦点
+// :focus-visible {
+//   outline: thin dashed currentColor;
+//   outline-offset: 4px;
+// }
+
+// https://developer.mozilla.org/zh-CN/docs/Web/CSS/::-webkit-scrollbar
+@media (min-width: 1024px) {
+  ::-webkit-scrollbar {
+    $scrollbar-size-number: 16;
+    $scrollbar-size: $scrollbar-size-number + px;
+    width: $scrollbar-size;
+    height: $scrollbar-size;
+    &-corner,
+    &-track {
+      background-color: transparent;
+    }
+    &-thumb {
+      width: $scrollbar-size;
+      height: 56px;
+      border-radius: math.div($scrollbar-size-number, 2) + px;
+      border: math.div($scrollbar-size-number, 4) + 1px solid transparent;
+      background-clip: content-box;
+      background-color: rgba(#000, 0.3);
+      &:hover {
+        background-color: rgba(#000, 0.42);
+      }
+    }
+  }
+}

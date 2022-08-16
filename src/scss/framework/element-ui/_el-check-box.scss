@@ -1,0 +1,40 @@
+.el-checkbox-button__inner {
+  border: none;
+  background-color: var(--checkBoxBg);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+}
+
+.el-checkbox-button:first-child .el-checkbox-button__inner {
+  border: none;
+  border-radius: 10px;
+}
+
+.el-checkbox-button:last-child .el-checkbox-button__inner {
+  border-radius: 10px;
+}
+
+.el-checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.el-checkbox-button.is-checked .el-checkbox-button__inner {
+  color: var(--check-box-checked-color);
+  background-color: var(--check-box-checked-bg-color);
+  border-color: var(--check-box-checked-border-color);
+  box-shadow: -1px 0 0 0 var(--check-box-checked-box-shadow-color);
+}
+
+.isActive {
+  .el-checkbox-button__inner {
+    background-color: var(--check-box-bg-active-color);
+    color: var(--check-box-active-color);
+  }
+}

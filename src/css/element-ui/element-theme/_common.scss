@@ -1,0 +1,71 @@
+$--color-primary: $primary;
+$--color-success: $success;
+$--color-warning: $warning;
+$--color-danger: $danger;
+$--color-info: $info;
+
+$--color-text-primary: $color-gray-800;
+$--color-text-regular: $color-text-regular;
+$--color-text-secondary: $color-gray-500;
+$--color-text-placeholder: $color-gray-400;
+
+$--border-color-base: $color-gray-300;
+$--border-color-lighter: $color-gray-100;
+$--border-color-light: $color-gray-200;
+
+$--border-radius-base: $border-radius-md;
+$--border-radius--base: $border-radius-md;
+
+$--background-color-base: $background-color-base;
+
+$--box-shadow-base: $shadow;
+$--box-shadow-dark: $shadow-lg;
+$--box-shadow-light: $shadow-sm;
+
+// Menu
+$--menu-item-font-size: 12px;
+$--menu-background-color: transparent;
+$--menu-item-hover-fill: $--color-primary;
+
+$--alert-title-font-size: 14px;
+$--alert-border-radius: $--border-radius-base;
+$--alert-icon-size: 20px;
+
+$--avatar-background-color: $color-gray-300;
+$--avatar-text-font-size: 12px;
+$--avatar-icon-font-size: 20px;
+
+$--button-primary-font-color: var(--primary-text-color);
+$--button-medium-padding-horizontal: 16px;
+$--button-small-padding-horizontal: 12px;
+$--button-mini-padding-horizontal: 12px;
+$--button-padding-horizontal: 16px;
+
+$--radio-button-checked-font-color: var(--primary-text-color);
+
+$--card-border-color: $--border-color-base;
+$--card-padding: 24px;
+
+$--collapse-header-font-size: 14px;
+$--collapse-content-font-size: 12px;
+$--collapse-content-font-color: $--color-text-secondary;
+$--collapse-header-height: 40px;
+
+$--dialog-title-font-size: 16px;
+$--dialog-padding-primary: 24px;
+
+$--loading-spinner-size: 48px;
+
+$--message-close-size: 20px;
+
+$--notification-padding: 16px 24px 16px 12px;
+
+$--pagination-font-size: 12px;
+
+$--rate-icon-size: 20px;
+
+$--table-header-background-color: $color-gray-50;
+$--table-row-hover-background-color: $color-gray-50;
+$--table-border-color: $color-gray-200;
+
+$--tooltip-padding: 8px;

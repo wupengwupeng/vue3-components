@@ -1,0 +1,6 @@
+@use 'sass:color';
+@use 'sass:map';
+
+@function getColorRGB($color) {
+  @return '#{color.red($color)}, #{color.green($color)}, #{color.blue($color)}';
+}

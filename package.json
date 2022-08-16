@@ -1,0 +1,66 @@
+{
+  "name": "vue3-wp-components",
+  "version": "1.2.2",
+  "main": "dist/vue3-wp-components.js",
+  "module": "dist/vue3-wp-components.es.js",
+  "types": "vue3-wp-components.d.ts",
+  "files": [
+    "dist/*.js",
+    "dist/*.css",
+    "vue3-wp-components.d.ts",
+    "src/components",
+    "src/directives"
+  ],
+  "private": false,
+  "author": {
+    "name": "wupeng",
+    "email": "2960969404@qq.com"
+  },
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "serve": "vite preview",
+    "build:publish": "npm run build && npm publish",
+    "theme": "sh src/css/element-ui/element-theme.sh"
+  },
+  "dependencies": {
+    "@vueuse/components": "^8.9.4",
+    "@vueuse/core": "^4.11.2",
+    "axios": "^0.21.1",
+    "clipboard": "^2.0.6",
+    "dayjs": "^1.10.6",
+    "echarts": "^5.2.2",
+    "element-plus": "^1.0.2-beta.71",
+    "file-saver": "^2.0.5",
+    "lodash": "^4.17.21",
+    "nprogress": "^0.2.0",
+    "qrcode": "^1.4.4",
+    "screenfull": "^5.0.2",
+    "store": "^2.0.12",
+    "vite-plugin-vue-setup-extend": "^0.4.0",
+    "vue": "^3.2.6",
+    "vue-i18n": "^9.1.7",
+    "vue-router": "^4.0.0-0",
+    "vue3-wp-components": "^1.1.5",
+    "vuex": "^4.0.1",
+    "wangeditor": "^4.7.15",
+    "xlsx": "^0.17.1"
+  },
+  "devDependencies": {
+    "@types/clipboard": "^2.0.1",
+    "@types/lodash": "^4.14.171",
+    "@types/node": "^16.11.6",
+    "@types/qrcode": "^1.4.1",
+    "@types/store": "^2.0.2",
+    "@vitejs/plugin-vue": "^1.6.0",
+    "@vue/compiler-sfc": "^3.2.6",
+    "autoprefixer": "^10.3.3",
+    "postcss": "^8.3.6",
+    "sass": "^1.38.2",
+    "tailwindcss": "^2.2.9",
+    "typescript": "^4.4.2",
+    "vite": "^2.5.1",
+    "vite-plugin-svg-icons": "^1.0.4",
+    "vue-tsc": "^0.2.3"
+  }
+}

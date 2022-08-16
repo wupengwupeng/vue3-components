@@ -1,0 +1,11 @@
+// 此路径不可修改 "../../../"
+@import '../../../../src/scss/variables';
+@import '../../../../src/css/element-ui/element-theme/common.scss';
+
+// 改变主题色变量
+$--color-primary: map-get($themes, 'vitality-yellow');
+$--button-primary-font-color: #332600;
+
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '../fonts';
+@import '../../../../node_modules/element-plus/packages/theme-chalk/src/index';

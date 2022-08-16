@@ -1,0 +1,15 @@
+.el-button + .el-button {
+  margin-left: 12px;
+}
+
+.el-button.is-circle {
+  border-radius: $border-radius;
+}
+.el-button > span > span:not(:empty) {
+  margin-left: 8px;
+}
+.el-button {
+  .app-icon {
+    transform: scale(calc(20 / 14));
+  }
+}
