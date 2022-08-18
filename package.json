@@ -1,6 +1,6 @@
 {
   "name": "vue3-wp-components",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "main": "dist/vue3-wp-components.js",
   "module": "dist/vue3-wp-components.es.js",
   "types": "vue3-wp-components.d.ts",
@@ -31,7 +31,7 @@
     "clipboard": "^2.0.6",
     "dayjs": "^1.10.6",
     "echarts": "^5.2.2",
-    "element-plus": "^1.0.2-beta.71",
+    "element-plus": "1.0.2-beta.71",
     "file-saver": "^2.0.5",
     "lodash": "^4.17.21",
     "nprogress": "^0.2.0",
@@ -42,7 +42,7 @@
     "vue": "^3.2.6",
     "vue-i18n": "^9.1.7",
     "vue-router": "^4.0.0-0",
-    "vue3-wp-components": "^1.1.5",
+    "vue3-wp-components": "^1.2.3",
     "vuex": "^4.0.1",
     "wangeditor": "^4.7.15",
     "xlsx": "^0.17.1"

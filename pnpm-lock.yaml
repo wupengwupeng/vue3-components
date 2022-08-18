@@ -15,7 +15,7 @@ specifiers:
   clipboard: ^2.0.6
   dayjs: ^1.10.6
   echarts: ^5.2.2
-  element-plus: ^1.0.2-beta.71
+  element-plus: 1.0.2-beta.71
   file-saver: ^2.0.5
   lodash: ^4.17.21
   nprogress: ^0.2.0
@@ -33,7 +33,7 @@ specifiers:
   vue-i18n: ^9.1.7
   vue-router: ^4.0.0-0
   vue-tsc: ^0.2.3
-  vue3-wp-components: ^1.1.5
+  vue3-wp-components: ^1.2.3
   vuex: ^4.0.1
   wangeditor: ^4.7.15
   xlsx: ^0.17.1
@@ -56,7 +56,7 @@ dependencies:
   vue: 3.2.37
   vue-i18n: 9.1.9_vue@3.2.37
   vue-router: 4.0.14_vue@3.2.37
-  vue3-wp-components: 1.1.5_vite@2.9.1
+  vue3-wp-components: 1.2.3_vite@2.9.1
   vuex: 4.0.2_vue@3.2.37
   wangeditor: 4.7.15
   xlsx: 0.17.5
@@ -227,8 +227,8 @@ packages:
       fastq: 1.13.0
     dev: true
 
-  /@popperjs/core/2.11.5:
-    resolution: {integrity: sha512-9X2obfABZuDVLCgPK9aX0a/x4jaOEweTTWE2+9sr0Qqqevj2Uv5XorvusThmc9XGYpS9yI+fhh8RTafBtGposw==}
+  /@popperjs/core/2.11.6:
+    resolution: {integrity: sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==}
     dev: false
 
   /@trysound/sax/0.2.0:
@@ -1048,6 +1048,10 @@ packages:
     resolution: {integrity: sha512-JLC809s6Y948/FuCZPm5IX8rRhQwOiyMb2TfVVQEixG7P8Lm/gt5S7yoQZmC8x1UehI9Pb7sksEt4xx14m+7Ug==}
     dev: false
 
+  /dayjs/1.11.5:
+    resolution: {integrity: sha512-CAdX5Q3YW3Gclyo5Vpqkgpj8fSdLQcRuzfX6mC6Phy0nfJ0eGYOeS7m4mt2plDWLAtA4TqTakvbboHvUxfe4iA==}
+    dev: false
+
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
     peerDependencies:
@@ -1204,9 +1208,9 @@ packages:
       vue: 3.1.x
     dependencies:
       '@element-plus/icons': 0.0.11
-      '@popperjs/core': 2.11.5
+      '@popperjs/core': 2.11.6
       async-validator: 3.5.2
-      dayjs: 1.11.0
+      dayjs: 1.11.5
       lodash: 4.17.21
       mitt: 2.1.0
       normalize-wheel: 1.0.1
@@ -2213,7 +2217,7 @@ packages:
     dev: true
 
   /normalize-wheel/1.0.1:
-    resolution: {integrity: sha1-rsiGr/2wRQcNhWRH32Ls+GFG7EU=}
+    resolution: {integrity: sha512-1OnlAPZ3zgrk8B91HyRj+eVv+kS5u+Z0SCsak6Xil/kmgEia50ga7zfkumayonZrImffAxPU/5WcyGhzetHNPA==}
     dev: false
 
   /nprogress/0.2.0:
@@ -3351,8 +3355,8 @@ packages:
       '@vue/shared': 3.2.37
     dev: false
 
-  /vue3-wp-components/1.1.5_vite@2.9.1:
-    resolution: {integrity: sha512-0yg9obxwG8H9YkQYTcCDvotjfP6e9EGisUAHUTe0ltdf/1kb+Y2oROQmHEiDh5eyMv1NOFJpuH7PM8qInCshdQ==}
+  /vue3-wp-components/1.2.3_vite@2.9.1:
+    resolution: {integrity: sha512-B3/ICKOM7ffQGf2+lXntjB5fMOg5HiN5eAmT14gKOtm1UPNj9MvedxWP/9AMJjjA+IYnh/U0/6lL61Wz3+Ez8w==}
     dependencies:
       '@vueuse/components': 8.9.4_vue@3.2.37
       '@vueuse/core': 4.11.2_vue@3.2.37

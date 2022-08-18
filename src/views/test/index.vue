@@ -69,8 +69,6 @@
         </Page>
       </div>
     </div>
-
-
     <TemplateDown v-if="templateVisible" v-model:visible="templateVisible"></TemplateDown>
   </div>
 </template>

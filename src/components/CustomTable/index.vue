@@ -5,21 +5,14 @@
       <el-table-column v-for="(item, index) in componentArr" :key="item.id + 'gg'" v-bind="item.columnProps"
         :prop="item.name" :label="item.titleName">
         <template #default="{ row }">
-          <!-- 时间组件 -->
-          <template v-if="item.type === 'date'">
-            <CustomForm v-if="row[item.name] && row[item.name].isShow"
-              :ref="(el: HTMLElement) => datePicker[index] = el" v-bind="item.props"
-              :componentId="getTypeComponets(item.type)" @blur="row[item.name]!.isShow = false"
-              v-model="row[item.name]!.value" />
-            <span v-else>{{ row[item.name] && row[item.name]!.value }}</span>
-          </template>
           <!-- select的情况防止和时间组件的事件冲突 -->
-          <template v-else-if="item.type === 'select'">
+          <template v-if="item.type === 'select'">
             <CustomForm v-if="row[item.name] && row[item.name]?.isShow" :ref="(el: HTMLElement) => sexRef[index] = el"
-              v-bind="item.props" :componentId="getTypeComponets(item.type)"
+              v-bind="item.props" :componentId="getTypeComponets(item.type)" v-focus
               @visible-change="flag => visibleChange(flag, row, index, item.name)" filterable @change="handlerChange"
               v-model="row[item.name]!.value" />
-            <span v-else>{{ row[item.name] && row[item.name]!.value }}</span>
+            <span v-else>{{ row[item.name] && getSelectRenderLabel(row[item.name]!.value, item.props)
+            }}</span>
           </template>
           <!-- range组件 -->
           <template v-else-if="item.type === 'range'">
@@ -53,10 +46,16 @@
 
 <script setup lang="ts" name="CustomTable">
 import CustomForm from '@/components/CustomForm/index.vue'
-import { ref, unref, Ref, nextTick, computed, PropType, onMounted, onUnmounted } from 'vue';
-import { getTypeComponets, getEventTargetNode } from '@/lib/utils'
+import { ref, unref, Ref, nextTick, computed, PropType, } from 'vue';
+import { getTypeComponets } from '@/lib/utils'
 type Obj = {
   [key: string]: any
+}
+type Options = {
+  value: string | number
+  label: string
+  disabled?: boolean
+
 }
 const emits = defineEmits(['update:modelValue', 'changeFormValid'])
 const props = defineProps({
@@ -73,9 +72,7 @@ const props = defineProps({
     default: () => []
   }
 })
-const datePicker: Ref<any> = ref([])
 const sexRef: Ref<any> = ref([])
-
 const targetElement: Ref<HTMLElement | null> = ref(null)
 const tableDate = computed({
   get() {
@@ -86,25 +83,13 @@ const tableDate = computed({
   }
 })
 
-const handlerCellClick = async (row: any, column: any, cell: HTMLElement, event: Event) => {
+const handlerCellClick = (row: any, column: any, cell: HTMLElement, event: Event) => {
   targetElement.value = cell
   if (!row[column.property]) return
   row[column.property]!.isShow = true
-  await nextTick()
-  const onFocus: any = (el: HTMLElement, isSelect?: boolean): void => {
-    if (isSelect) {
-      (cell.children[0]?.children[0]?.children[0]?.children[0]?.children[0] as any).focus()
-    } else {
-      (el.children[0]?.children[0]?.children[0] as any).focus()
-    }
-  }
-  datePicker.value.length && datePicker.value.filter(Boolean)[0]?.componentId && datePicker.value.filter(Boolean)[0].componentId === 'el-date-picker' ? setTimeout(onFocus(cell), 200) : ''
-  sexRef.value.length && sexRef.value.filter(Boolean)[0]?.componentId && sexRef.value.filter(Boolean)[0].componentId === 'my-select' ? setTimeout(onFocus(cell, true), 50) : ''
 }
 const visibleChange = (flag: boolean, row: any, index: number, name: string) => {
-  if (flag) {
-    sexRef.value.filter(Boolean)[0].$el.children[0].children[0].children[0].focus()
-  } else {
+  if (!flag) {
     row[name].isShow = false
   }
 }
@@ -141,17 +126,16 @@ const rowClassName = ({ row, column, rowIndex, columnIndex }: Obj) => {
     return 'row-class-name'
   }
 }
-const targetEvent = (e: any) => {
-  setTimeout(() => {
-    const a = getEventTargetNode(e, targetElement.value)
-  }, 200)
+
+// 获取下拉框选中一个label显示对应的值
+const getSelectRenderLabel = (val: any, props: any) => {
+  if (!val || !props.options.length) return ''
+  if (props?.multiple) {
+    const data = props.options.filter((res: Options) => val.includes(res.value))
+    return data.map((res: Options) => res.label).join(',')
+  }
+  return props.options.find((res: Options) => res.value == val)?.label
 }
-onMounted(() => {
-  window.addEventListener('mousedown', targetEvent, true)
-})
-onUnmounted(() => {
-  window.removeEventListener('mousedown', targetEvent, true)
-})
 </script>
 
 <style lang="scss">

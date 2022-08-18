@@ -6,5 +6,5 @@
 $--color-primary: map-get($themes, 'purple');
 
 /* 改变 icon 字体路径变量，必需 */
-$--font-path: '../fonts';
+$--font-path: '../../../../node_modules/element-plus/lib/theme-chalk/fonts';
 @import '../../../../node_modules/element-plus/packages/theme-chalk/src/index';
